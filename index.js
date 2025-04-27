@@ -7,7 +7,7 @@ dotenv.config();
 const USER_TOKEN = process.env.USER_TOKEN; 
 const CHANNEL_ID = process.env.CHANNEL_ID; 
 const MESSAGE = ["Automated message", "Hello, world!", "Good morning!", "Good afternoon!", "Good evening!", "Have a nice day!", "Goodbye!"];
-const INTERVAL = 5000; // 5 seconds
+const INTERVAL = 6000; // 6 seconds
 
 // Common emojis for reactions
 const EMOJIS = [
@@ -97,7 +97,7 @@ async function addMultipleReactions(messageId) {
   for (const emoji of selectedEmojis) {
     await addReaction(messageId, emoji);
     // Small delay between adding reactions to avoid rate limits
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 2000));
   }
 }
 
